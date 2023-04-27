@@ -27,5 +27,8 @@ module.exports = {
     "@typescript-eslint/consistent-type-imports": "off",
     "jsx-quotes": "off",
     "@typescript-eslint/quotes": "off",
+    "@typescript-eslint/padding-line-between-statements": "off",
+    "arrow-body-style": "off",
+    "capitalized-comments": "off",
   },
 };
