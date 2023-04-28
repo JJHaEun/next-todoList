@@ -1,6 +1,17 @@
 # next-todoList
 
+#### 타입스크립트를 적용한 Next를 이용한 todoList만들기
+
 next-TodoList
+
+- styled-component사용해보기
+  ( HTML 내에서 첫 번째 렌더링에 필요한 스타일을 제공하고 나머지는 클라이언트에서 로드할 수 있습니다. 이 경우 styled-components 를 사용하고 있습니다 .)
+
+  - 이미 적용되어있는 스타일을 초기화 하기위해 전체선택자 '\*'을 사용하여 margin:0; 등을 지정할 수도 있으나, 이미 있는 모든 스타일을 초기화 하는 styled-reset등을 사용하면 브라우저 호환성을 높일 수 있음 (styled-reset을 설치한 뒤 글로벌 css에 reset만 import해주면 됨)
+
+- 필요한 색상을 미리 객체로 정리해 파일로 만들어두고 import해서 사용.
+- 타입파일을 만들어 관련타입끼리 관리.
+  - todo.d.ts 라는 파일을 만드는데 이 d.ts 라는 확장자의 파일은 타입스크립트의 타입추론을 돕는 파일.
 
 ```react
 import { NextPage } from "next";

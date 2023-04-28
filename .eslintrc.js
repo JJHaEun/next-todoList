@@ -16,11 +16,12 @@ module.exports = {
     ecmaFeatures: {
       jsx: true,
     },
+    project: "**/tsconfig.json",
     ecmaVersion: "latest",
     sourceType: "module",
-    project: "**/tsconfig.json",
   },
-  plugins: ["react", "@typescript-eslint"],
+
+  plugins: ["react", "@typescript-eslint", "prettier"],
   rules: {
     "react/react-in-jsx-scope": "off",
     "@typescript-eslint/indent": "off",
@@ -30,5 +31,7 @@ module.exports = {
     "@typescript-eslint/padding-line-between-statements": "off",
     "arrow-body-style": "off",
     "capitalized-comments": "off",
+    "@typescript-eslint/consistent-type-imports": "off",
+    "@typescript-eslint/naming-convention": "off",
   },
 };

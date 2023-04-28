@@ -1,13 +1,22 @@
-import { NextPage } from "next";
+import type { NextPage } from "next";
+import TodoList from "../src/components/todoList/TodoList";
+import { TodoType } from "../src/types/todo/todo";
 
-export default function Main(): JSX.Element {
-  // const Main으로 함수를 만든뒤 Main: 해서 적으면 Main이라는 변수의 타입을 의미하는데,
-  // pages폴더에서의 컴포넌트 타입으 NextPage이다.
-  // 화살표 함수형으로 적고 변수뒤에 타입을 NextPage로 적어주면 되는데
-  // 함수 선언식의 경우에는 NextPage터압울 사용하는 함수는 반환형이 JSX.Element으로 명시해줘야한다.
+const todos: TodoType[] = [
+  { id: 1, text: "마트 가서 장보기", color: "red", checked: false },
+  { id: 2, text: "말포이 괴롭게 하기", color: "orange", checked: false },
+  { id: 3, text: "새로운 애완동물 가게 들르기", color: "green", checked: true },
+  { id: 4, text: "넥스트 공부하기", color: "green", checked: true },
+  { id: 5, text: "지팡이 구경하기", color: "navy", checked: false },
+  { id: 6, text: "분리수거 하기", color: "yellow", checked: false },
+];
+
+const Main: NextPage = (): JSX.Element => {
   return (
     <>
-      <div>Hello Typescript</div>
+      <TodoList todos={todos} />
     </>
   );
-}
+};
+
+export default Main;
