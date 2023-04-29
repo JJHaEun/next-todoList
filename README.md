@@ -32,3 +32,5 @@ export default function Main(): JSX.Element {
 - 함수의 이름을 지정하고 export default 함수이름 으로 명시적으로 내보내는 것이 가독성이 좋다.
 
 > import type 구문이 필요하지 않을 수도 있습니다. 예를 들어, 타입스크립트 환경에서 JSX.Element 타입은 기본적으로 내장되어 있으므로, import React 구문 없이도 JSX.Element 타입을 사용할 수 있습니다. 이와 같이, NextPage 타입도 일부 경우에는 이미 다른 모듈에서 불러와져서 사용되고 있을 수 있습니다. 하지만, 보통은 NextPage를 사용하기 위해서는 import type { NextPage } from 'next' 구문을 추가해야 합니다.
+
+> 신기한 사실을 알게되었다. 컴포넌트를 분리하고 스타일파일을 따로 만들었더라도, 이어붙인 컴포넌트에 해당 className이 있다면 그대로 적용이된다. => bg-${컬러이름} 이 부분이 listItem에 자동으로 적용되었다.

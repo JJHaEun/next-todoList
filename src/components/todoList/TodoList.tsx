@@ -1,16 +1,22 @@
-import { TodoType } from "../../types/todo/todo";
 import { ContainerTodoList } from "./TodoList.styles";
 import { useCallback, useMemo } from "react";
-
-interface IProps {
-  todos: TodoType[];
-}
+import ListItem from "./todoListItem/listItems";
+import { TodoType } from "../../types/todo/todo";
 
 type ObjectIndexType = {
   [key: string]: number | undefined;
 };
 
-export default function TodoList({ todos }: IProps): JSX.Element {
+const todos: TodoType[] = [
+  { id: 1, text: "마트 가서 장보기", color: "red", checked: false },
+  { id: 2, text: "말포이 괴롭게 하기", color: "orange", checked: false },
+  { id: 3, text: "새로운 애완동물 가게 들르기", color: "green", checked: true },
+  { id: 4, text: "넥스트 공부하기", color: "green", checked: true },
+  { id: 5, text: "지팡이 구경하기", color: "navy", checked: false },
+  { id: 6, text: "분리수거 하기", color: "yellow", checked: false },
+];
+
+export default function TodoList(): JSX.Element {
   const getTodoListNumbers = useCallback(() => {
     const colors: ObjectIndexType = {};
     // let red = 0;
@@ -82,6 +88,7 @@ export default function TodoList({ todos }: IProps): JSX.Element {
             ))}
           </div>
         </div>
+        <ListItem todos={todos} />
       </ContainerTodoList>
     </>
   );
