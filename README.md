@@ -11,7 +11,23 @@ next-TodoList
 
 - 필요한 색상을 미리 객체로 정리해 파일로 만들어두고 import해서 사용.
 - 타입파일을 만들어 관련타입끼리 관리.
+
   - todo.d.ts 라는 파일을 만드는데 이 d.ts 라는 확장자의 파일은 타입스크립트의 타입추론을 돕는 파일.
+
+---
+
+- import해올 svg파일을 리엑트 컴포넌트로 변형시키기 위해 바벨 플러그인을 설치 & 설정 추가
+
+  > yarn add babel-plugin-inline-react-svg -D
+
+- .babelrc 에도 설정을 추가해주고,
+- import TrashDelIcon from "../../../../public/svg/trash_delete.svg"; 처럼 import 해서 사용.
+
+  - \*_: .svg라는 모듈을 찾지못한다는 에러가 발생한느데, 이 모듈에 대한 타입을 지정한다면 해결됨.
+    ==> image.d.ts파일에 declare module '_.svg';
+    를 적어주고 저장하면 '\*.svg'가 모듈로 선언되어 에러는 사라짐.
+
+  > 위의 방법을 사용하니 경로설정이 잘못되었는지 계속 에러가 발생해 컴포넌트로 분리하는 방법을 사용하였다.
 
 ```react
 import { NextPage } from "next";
