@@ -27,7 +27,7 @@ export const Checkboxes = styled.section`
   .todo-check {
     /* width: 16px; */
     path {
-      fill: ${palette.navy};
+      fill: ${palette.green};
     }
   }
 `;

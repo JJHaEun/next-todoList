@@ -2,21 +2,13 @@ import { ContainerTodoList } from "./TodoList.styles";
 import { useCallback, useMemo } from "react";
 import ListItem from "./todoListItem/listItems";
 import { TodoType } from "../../types/todo/todo";
+import { IProps } from "./TodoList.types";
 
 type ObjectIndexType = {
   [key: string]: number | undefined;
 };
 
-const todos: TodoType[] = [
-  { id: 1, text: "마트 가서 장보기", color: "red", checked: false },
-  { id: 2, text: "말포이 괴롭게 하기", color: "orange", checked: false },
-  { id: 3, text: "새로운 애완동물 가게 들르기", color: "green", checked: true },
-  { id: 4, text: "넥스트 공부하기", color: "green", checked: true },
-  { id: 5, text: "지팡이 구경하기", color: "navy", checked: false },
-  { id: 6, text: "분리수거 하기", color: "yellow", checked: false },
-];
-
-export default function TodoList(): JSX.Element {
+export default function TodoList({ todos }: IProps): JSX.Element {
   const getTodoListNumbers = useCallback(() => {
     const colors: ObjectIndexType = {};
     // let red = 0;
@@ -25,7 +17,7 @@ export default function TodoList(): JSX.Element {
     // let green = 0;
     // let blue = 0;
     // let navy = 0;
-    todos.forEach((todo) => {
+    todos?.forEach((todo) => {
       const value = colors[todo.color];
       //   switch (todo.color) {
       //     case "red":
@@ -75,7 +67,7 @@ export default function TodoList(): JSX.Element {
       <ContainerTodoList>
         <div className="todo-list-header">
           <p className="todo-list-last-todo">
-            남은 TODO<span>{todos.length}개</span>
+            남은 TODO<span>{todos?.length}개</span>
           </p>
           <div className="todo-list-header-colors">
             {Object.keys(todoColorNums).map((color, index) => (
