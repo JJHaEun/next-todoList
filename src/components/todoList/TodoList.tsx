@@ -80,7 +80,6 @@ export default function TodoList(): JSX.Element {
           <div className="todo-list-header-colors">
             {Object.keys(todoColorNums).map((color, index) => (
               <div className="header-color-num" key={index}>
-                <>{console.log(color)}</>
                 <div className={`header-color-round bg-${color}`} />
                 <p>{todoColorNums[color]}개</p>
                 {/* 해당하는 키값의 값을 뽑아옴. */}

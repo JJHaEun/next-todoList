@@ -23,11 +23,13 @@ next-TodoList
 - .babelrc 에도 설정을 추가해주고,
 - import TrashDelIcon from "../../../../public/svg/trash_delete.svg"; 처럼 import 해서 사용.
 
-  - \*_: .svg라는 모듈을 찾지못한다는 에러가 발생한느데, 이 모듈에 대한 타입을 지정한다면 해결됨.
+  - \*_: .svg라는 모듈을 찾지못한다는 에러가 발생하는데, 이 모듈에 대한 타입을 지정한다면 해결됨.
     ==> image.d.ts파일에 declare module '_.svg';
     를 적어주고 저장하면 '\*.svg'가 모듈로 선언되어 에러는 사라짐.
 
-  > 위의 방법을 사용하니 경로설정이 잘못되었는지 계속 에러가 발생해 컴포넌트로 분리하는 방법을 사용하였다.
+> 위의 방법을 사용하니 경로설정이 잘못되었는지 계속 에러가 발생해 컴포넌트로 분리하는 방법을 사용하였다.
+
+- axios를 이용해 만든 api에 요청하기
 
 ```react
 import { NextPage } from "next";
