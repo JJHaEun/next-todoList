@@ -1,3 +1,5 @@
+import { TodoType } from "../../../types/todo/todo";
+import { onClickCheckTodo } from "../../event/checkTodo";
 import { IProps } from "../TodoList.types";
 import ListItemChecks from "./listItemchecks";
 import { TodoListItem } from "./listItems.styles";

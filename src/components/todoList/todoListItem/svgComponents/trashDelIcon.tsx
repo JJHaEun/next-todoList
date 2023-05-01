@@ -1,4 +1,6 @@
-export default function TrashDelIcon(): JSX.Element {
+import { IProps } from "../../TodoList.types";
+
+export default function TrashDelIcon({ todo }: IProps): JSX.Element {
   return (
     <span className="todo-trash" onClick={() => {}}>
       <svg

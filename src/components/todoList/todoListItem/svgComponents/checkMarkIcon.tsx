@@ -1,6 +1,11 @@
-export default function CheckMarkIcon(): JSX.Element {
+import { onClickCheckTodo } from "../../../event/checkTodo";
+import { IProps } from "../../TodoList.types";
+
+export default function CheckMarkIcon({ todo }: IProps): JSX.Element {
+  const { checkTodo } = onClickCheckTodo();
+
   return (
-    <span className="todo-check" onClick={() => {}}>
+    <span className="todo-check" onClick={checkTodo(todo?.id)}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="24"

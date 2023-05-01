@@ -1,5 +1,6 @@
 import axios from "axios";
 import type { GetServerSideProps, NextPage } from "next";
+import { memo } from "react";
 import TodoList from "../src/components/todoList/TodoList";
 import { IProps } from "../src/components/todoList/TodoList.types";
 import { getToDoAPI } from "../src/lib/api/todo";
@@ -15,7 +16,7 @@ const Main: NextPage<IProps> = ({ todos }): JSX.Element => {
   );
 };
 
-export default Main;
+export default memo(Main);
 
 export const getServerSideProps: GetServerSideProps = async () => {
   try {

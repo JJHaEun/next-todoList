@@ -1,8 +1,9 @@
 import { ContainerTodoList } from "./TodoList.styles";
 import { useCallback, useMemo } from "react";
 import ListItem from "./todoListItem/listItems";
-import { TodoType } from "../../types/todo/todo";
 import { IProps } from "./TodoList.types";
+import { onClickCheckTodo } from "../event/checkTodo";
+import { TodoType } from "../../types/todo/todo";
 
 type ObjectIndexType = {
   [key: string]: number | undefined;
@@ -67,7 +68,8 @@ export default function TodoList({ todos }: IProps): JSX.Element {
       <ContainerTodoList>
         <div className="todo-list-header">
           <p className="todo-list-last-todo">
-            남은 TODO<span>{todos?.length}개</span>
+            남은 TODO
+            <span>{todos?.filter((todo) => !todo.checked).length}개</span>
           </p>
           <div className="todo-list-header-colors">
             {Object.keys(todoColorNums).map((color, index) => (
