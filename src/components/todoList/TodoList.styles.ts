@@ -5,7 +5,7 @@ export const ContainerTodoList = styled.section`
   width: 100%;
   .todo-list-header {
     position: relative;
-    padding: 12px;
+    padding: 20px;
     border-bottom: 1px solid ${palette.gray};
   }
 
