@@ -52,6 +52,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       // 3. readFileSync를 사용하는 부분을 따로 빼서 import하여 사용하는 방법
 
       const todos = Data.getList();
+
       console.log("todos: ", todos);
       res.statusCode = 200;
       return res.send(todos);
@@ -61,6 +62,31 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       res.statusCode = 500;
       res.send(error);
     }
+  }
+  if (req.method === "POST") {
+    // 요청 메서드를 확인하고
+    const { text, color } = req.body; // text와 color라는 값을 받았는지 확인하기
+    if (!text || !color) {
+      res.statusCode = 400; // 둘중 하나라도 없으면 400
+      return res.send("text니 color가 없습니다.");
+    }
+    const todos = Data.getList();
+
+    let todoId: number;
+    if (todos.length > 0) {
+      todoId = todos[todos.length - 1].id + 1;
+    } else {
+      todoId = 1;
+    }
+    const newTodo = {
+      id: todoId,
+      text,
+      color,
+      checked: false,
+    };
+    Data.write([...todos, newTodo]);
+    res.statusCode = 200;
+    res.end();
   }
 };
 

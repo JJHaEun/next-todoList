@@ -6,7 +6,7 @@ export const TodoColorWrap = styled.section`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 0 50% 0 0;
+  padding: 0 50% 5% 0;
   .add-todo-color-list {
     display: flex;
     flex-direction: row;
@@ -17,10 +17,14 @@ export const TodoColorWrap = styled.section`
       border-radius: 50%;
       outline: none;
       border: none;
+      cursor: pointer;
       &:last-child {
         margin: 0;
       }
     }
+  }
+  .select-color {
+    border: 2px solid green !important;
   }
   .bg-blue {
     background-color: ${palette.blue};

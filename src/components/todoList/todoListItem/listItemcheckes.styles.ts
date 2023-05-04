@@ -12,6 +12,7 @@ export const Checkboxes = styled.section`
     border: 1px solid ${palette.gray};
     outline: none;
     background-color: transparent;
+    cursor: pointer;
   }
   .todo-checking {
     display: flex;
@@ -20,12 +21,15 @@ export const Checkboxes = styled.section`
   }
   .todo-trash {
     width: 16px;
+    cursor: pointer;
     path {
       fill: ${palette.deep_red};
     }
   }
   .todo-check {
-    /* width: 16px; */
+    width: 20px;
+    cursor: pointer;
+
     path {
       fill: ${palette.green};
     }

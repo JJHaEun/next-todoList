@@ -11,11 +11,13 @@ export default function ListItemChecks({ todo }: IProps): JSX.Element {
   return (
     <Checkboxes className="todo-right-side">
       {!todo?.checked ? (
-        <button className="todo-button" onClick={checkTodo(todo?.id)} />
-      ) : (
         <span className="todo-checking">
           <TrashDelIcon todo={todo} />
-          <CheckMarkIcon todo={todo} />
+          <button className="todo-button" onClick={checkTodo(todo?.id)} />
+        </span>
+      ) : (
+        <span className="todo-checking">
+          <TrashDelIcon todo={todo} /> <CheckMarkIcon todo={todo} />
         </span>
       )}
     </Checkboxes>

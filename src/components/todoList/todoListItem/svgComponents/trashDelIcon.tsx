@@ -1,8 +1,11 @@
+import { onClickDelete } from "../../../event/deleteTodo";
 import { IProps } from "../../TodoList.types";
 
-export default function TrashDelIcon({ todo }: IProps): JSX.Element {
+export default function TrashDelIcon({ todo, todos }: IProps): JSX.Element {
+  // console.log(todo.id)
+  const { deleteTodo } = onClickDelete();
   return (
-    <span className="todo-trash" onClick={() => {}}>
+    <span className="todo-trash" onClick={deleteTodo(todo?.id)}>
       <svg
         width="24"
         height="24"
