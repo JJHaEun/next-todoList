@@ -1,9 +1,10 @@
+import { memo } from "react";
 import AddTodo from "../../src/components/todoList/todoAdd/AddTodo";
-
-export default function Todo(): JSX.Element {
+const Todo = (): JSX.Element => {
   return (
     <>
       <AddTodo />
     </>
   );
-}
+};
+export default memo(Todo);

@@ -8,7 +8,7 @@ export const onClickCheckTodo = () => {
   const checkTodo = (todosId?: number) => async () => {
     try {
       await checkTodoAPI(Number(todosId));
-      console.log("체크");
+      // console.log("체크");
       // 체크를 적용하는 법1
       // router,reload(); => 새로고침이 적용되어 데이터를 새로 받아옴
 

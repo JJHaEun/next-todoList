@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import palette from "../../../styles/palette";
 
-export const ContainerHeader = styled.section`
+export const ContainerHeader = styled.header`
   width: 100%;
   display: flex;
   align-items: center;

@@ -1,10 +1,8 @@
-import axios from "axios";
 import type { GetServerSideProps, NextPage } from "next";
 import { memo } from "react";
 import TodoList from "../src/components/todoList/TodoList";
 import { IProps } from "../src/components/todoList/TodoList.types";
 import { getToDoAPI } from "../src/lib/api/todo";
-import { TodoType } from "../src/types/todo/todo";
 
 const Main: NextPage<IProps> = ({ todos }): JSX.Element => {
   // console.log(process.env.NEXT_PUBLIC_API_URL, "브라우저");
@@ -22,7 +20,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
   try {
     // console.log(process.env.NEXT_PUBLIC_API_URL, "서버");
     const { data } = await getToDoAPI();
-    console.log("res:", data);
+    // console.log("res:", data);
     // const res = await axios.get(
     //   "http://localhost:3000/api/todos"
     // );

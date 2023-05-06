@@ -53,7 +53,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
       const todos = Data.getList();
 
-      console.log("todos: ", todos);
+      // console.log("todos: ", todos);
       res.statusCode = 200;
       return res.send(todos);
     } catch (error) {
