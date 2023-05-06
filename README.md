@@ -67,3 +67,15 @@ export default function Main(): JSX.Element {
 > import type 구문이 필요하지 않을 수도 있습니다. 예를 들어, 타입스크립트 환경에서 JSX.Element 타입은 기본적으로 내장되어 있으므로, import React 구문 없이도 JSX.Element 타입을 사용할 수 있습니다. 이와 같이, NextPage 타입도 일부 경우에는 이미 다른 모듈에서 불러와져서 사용되고 있을 수 있습니다. 하지만, 보통은 NextPage를 사용하기 위해서는 import type { NextPage } from 'next' 구문을 추가해야 합니다.
 
 > 신기한 사실을 알게되었다. 컴포넌트를 분리하고 스타일파일을 따로 만들었더라도, 이어붙인 컴포넌트에 해당 className이 있다면 그대로 적용이된다. => bg-${컬러이름} 이 부분이 listItem에 자동으로 적용되었다.
+
+
+---
+
+### 드디어 next를 활용한 todoList 완성!!!
+
+<img width="696" alt="스크린샷 2023-05-06 오후 7 31 34" src="https://user-images.githubusercontent.com/114386587/236619142-7291fc58-7a3a-49e8-a95f-b0dfe0b0ebf3.png">
+
+delete메서드를 활용해 특정 List를 삭제하고,
+patch메서드를 사용해 checked를 true로 바꾸어 완료표시를 하거나, 다시 되돌리기,
+get메서드를 사용해 저장해 놓은 데이터 가져오기,
+post메서드를 사용해 List추가하기
