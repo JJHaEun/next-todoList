@@ -10,6 +10,7 @@ export const INIT_TODO_LIST = "todo/INIT_TODO_LIST";
 // 액션 생성자 정의 = 액션객체( 항상 모듈의 action생성자들을 함수형태로 export해야한다.)
 export const setTodo = (payload: TodoType[]) => {
   return {
+    // type: SET_TODO_LIST,
     type: INIT_TODO_LIST,
     payload,
   };
