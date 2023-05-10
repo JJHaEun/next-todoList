@@ -5,7 +5,7 @@ const rootReducer = combineReducers({
   todo,
 });
 
-const reducer = (state: any, action: any) => {
+const reducer = (state, action) => {
   if (action.type === HYDRATE) {
     const nextState = {
       ...state,

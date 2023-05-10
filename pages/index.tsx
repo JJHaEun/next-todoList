@@ -1,5 +1,6 @@
 import type { GetServerSideProps, NextPage } from "next";
 import { memo } from "react";
+import { wrapper } from "../src/commons/store";
 import TodoList from "../src/components/todoList/TodoList";
 import { IProps } from "../src/components/todoList/TodoList.types";
 import { getToDoAPI } from "../src/lib/api/todo";
@@ -16,7 +17,8 @@ const Main: NextPage<IProps> = ({ todos }): JSX.Element => {
 
 export default memo(Main);
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getServerSideProps = wrapper.getServerSideProps(async (store) => {
+  console.log("스토어", store);
   try {
     // console.log(process.env.NEXT_PUBLIC_API_URL, "서버");
     const { data } = await getToDoAPI();
@@ -30,4 +32,4 @@ export const getServerSideProps: GetServerSideProps = async () => {
     console.log("에러", error);
     return { props: { todos: [] } };
   }
-};
+});
