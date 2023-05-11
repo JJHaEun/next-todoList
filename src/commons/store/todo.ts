@@ -22,7 +22,7 @@ export const initialState: TodoReduxState = {
   todos: [],
 };
 
-const todo = createSlice({
+export const todo = createSlice({
   name: "todo",
   initialState,
   reducers: {
