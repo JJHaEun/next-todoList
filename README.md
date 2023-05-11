@@ -102,7 +102,8 @@ export default function Main(): JSX.Element {
 // 미들웨어 적용을 위한 스토어 enhancer
 // const bindMiddleware = (middleware: any) => {
 //   if (process.env.NODE_ENV !== "production") {
-//     const { composeWithDevTools } = require("redux-devtools-extension");// 리덕스 툴킷이 없을때 데브툴을 사용하기 위해 설치하고 설정해주었던 부분
+//     const { composeWithDevTools } = require("redux-devtools-extension");
+                  // 리덕스 툴킷이 없을때 데브툴을 사용하기 위해 설치하고 설정해주었던 부분
 //     return composeWithDevTools(applyMiddleware(...middleware));
 //   }
 //   return applyMiddleware(...middleware);
