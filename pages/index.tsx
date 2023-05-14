@@ -6,12 +6,11 @@ import TodoList from "../src/components/todoList/TodoList";
 import { IProps } from "../src/components/todoList/TodoList.types";
 import { getToDoAPI } from "../src/lib/api/todo";
 
-const Main: NextPage<IProps> = ({ todos }): JSX.Element => {
+const Main: NextPage<IProps> = (): JSX.Element => {
   // console.log(process.env.NEXT_PUBLIC_API_URL, "브라우저");
-  console.log("todos", todos);
   return (
     <>
-      <TodoList todos={todos} />
+      <TodoList />
     </>
   );
 };
@@ -20,7 +19,7 @@ export default memo(Main);
 
 export const getServerSideProps = wrapper.getServerSideProps(
   (store) => async () => {
-    console.log("스토어", store);
+    // console.log("스토어", store);
     try {
       // console.log(process.env.NEXT_PUBLIC_API_URL, "서버");
       const { data } = await getToDoAPI();
@@ -30,10 +29,10 @@ export const getServerSideProps = wrapper.getServerSideProps(
       // );
       // console.log("res:", res.data); // 위쪽과 동일한코드
       store.dispatch(todoAction.setTodo(data));
-      return { props: { todos: data } };
+      return { props: {} };
     } catch (error) {
       console.log("에러", error);
-      return { props: { todos: [] } };
+      return { props: {} };
     }
   }
 );

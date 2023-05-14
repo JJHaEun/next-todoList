@@ -32,7 +32,7 @@ export const exist = ({ id }: { id: number }) => {
   const todos = getList();
 
   const todo = todos.some((todo) => todo?.id === id);
-  console.log(todo);
+  // console.log(todo);
   return todo;
   // some: 배열 안의 어떤 요소라도 주어진 판별 함수를 적어도 하나라도 통과하는지 테스트하는 메서드
 };

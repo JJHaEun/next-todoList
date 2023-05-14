@@ -5,7 +5,7 @@ import { Checkboxes } from "./listItemcheckes.styles";
 import CheckMarkIcon from "./svgComponents/checkMarkIcon";
 import TrashDelIcon from "./svgComponents/trashDelIcon";
 
-export default function ListItemChecks({ todo }: IProps): JSX.Element {
+export default function ListItemChecks({ todo, todos }: IProps): JSX.Element {
   const { checkTodo } = onClickCheckTodo();
 
   return (
@@ -13,7 +13,10 @@ export default function ListItemChecks({ todo }: IProps): JSX.Element {
       {!todo?.checked ? (
         <span className="todo-checking">
           <TrashDelIcon todo={todo} />
-          <button className="todo-button" onClick={checkTodo(todo?.id)} />
+          <button
+            className="todo-button"
+            onClick={checkTodo(Number(todo?.id))(todos)}
+          />
         </span>
       ) : (
         <span className="todo-checking">

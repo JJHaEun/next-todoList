@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { Data } from "../../../../src/lib/api/data";
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+export default async function API(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === "PATCH") {
     // 선택(todo checked변경하기(true,false))
     try {
@@ -54,4 +54,4 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   }
   res.statusCode = 405;
   return res.end();
-};
+}

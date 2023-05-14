@@ -5,7 +5,7 @@ export default function TrashDelIcon({ todo, todos }: IProps): JSX.Element {
   // console.log(todo.id)
   const { deleteTodo } = onClickDelete();
   return (
-    <span className="todo-trash" onClick={deleteTodo(todo?.id)}>
+    <span className="todo-trash" onClick={deleteTodo(Number(todo?.id))(todos)}>
       <svg
         width="24"
         height="24"

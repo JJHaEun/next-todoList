@@ -2,6 +2,11 @@ import { configureStore } from "@reduxjs/toolkit";
 import { createWrapper, HYDRATE } from "next-redux-wrapper";
 import { combineReducers } from "redux";
 import { todo } from "./todo";
+import {
+  TypedUseSelectorHook,
+  useSelector as useReduxSelector,
+} from "react-redux";
+
 const rootReducer = combineReducers({
   todo: todo.reducer,
 });
@@ -20,6 +25,16 @@ const reducer = (state: any, action: any) => {
 
 // 스토어 타입
 export type RootState = ReturnType<typeof rootReducer>;
+
+// 1.타입이 지정되어있는  커스텀 useSelector만들기
+export const useSelector: TypedUseSelectorHook<RootState> = useReduxSelector;
+
+//2.  타입이 지정되어있는  커스텀 useSelector만들기  이렇게 위 아래 두가지 방법이 있음.
+// declare module "react-redux" {
+//   interface DefaultRootState extends RootState {}
+// }
+
+//------------------------------------------------------
 
 // 미들웨어 적용을 위한 스토어 enhancer
 // const bindMiddleware = (middleware: any) => {

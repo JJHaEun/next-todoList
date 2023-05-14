@@ -1,15 +1,15 @@
 import { ContainerTodoList } from "./TodoList.styles";
 import { useCallback, useMemo } from "react";
 import ListItem from "./todoListItem/listItems";
-import { IProps } from "./TodoList.types";
-import { onClickCheckTodo } from "../event/checkTodo";
-import { TodoType } from "../../types/todo/todo";
+// import { useSelector } from "react-redux";
+import { RootState, useSelector } from "../../commons/store";
 
 type ObjectIndexType = {
   [key: string]: number | undefined;
 };
 
-export default function TodoList({ todos }: IProps): JSX.Element {
+export default function TodoList(): JSX.Element {
+  const todos = useSelector((state: RootState) => state.todo.todos);
   const getTodoListNumbers = useCallback(() => {
     const colors: ObjectIndexType = {};
     // let red = 0;

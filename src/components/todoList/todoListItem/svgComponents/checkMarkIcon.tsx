@@ -1,11 +1,11 @@
 import { onClickCheckTodo } from "../../../event/checkTodo";
 import { IProps } from "../../TodoList.types";
 
-export default function CheckMarkIcon({ todo }: IProps): JSX.Element {
+export default function CheckMarkIcon({ todo, todos }: IProps): JSX.Element {
   const { checkTodo } = onClickCheckTodo();
 
   return (
-    <span className="todo-check" onClick={checkTodo(todo?.id)}>
+    <span className="todo-check" onClick={checkTodo(Number(todo?.id))(todos)}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="24"

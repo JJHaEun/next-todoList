@@ -1,6 +1,6 @@
 # next-todoList
 
-#### 타입스크립트를 적용한 Next를 이용한 todoList만들기
+## 타입스크립트를 적용한 Next를 이용한 todoList만들기
 
 next-TodoList
 
@@ -119,3 +119,27 @@ const initStore = () => {
   });
 };
 ```
+
+#### useSelector를 사용해 데이터를 사용하는 방법
+
+- 리덕스 스토어의 값 받아오기
+  useSelector의 state타입은 RootState에서 가져오기
+
+  >
+
+  ```js
+  > // 스토어 타입
+  > export type RootState = ReturnType<typeof rootReducer>;
+  >
+  ```
+
+  다만 매변 RootState를 불러와 타입을 지정해주는것이 조금 번거로우니 아예 타입을 지정해 놓은 useSelector를 만들어 사용해보자.
+
+- useSelector 사용해 todos불러오기 ==> todo값을 받아옴.
+
+#### Todo가 변경되었을때 변경된 todoList로 변경하기.
+
+액션실행 => dispatch사용!!
+
+액션을 실행시키기 위해 디스패치를 통해 실행한다.
+디스패치를 간단히 사용하는 방법은 useDispatch 라는 훅을 사용하는 것이다.!!
